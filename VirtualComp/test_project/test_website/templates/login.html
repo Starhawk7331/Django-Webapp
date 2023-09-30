@@ -7,19 +7,19 @@
 {% block content %}
 <h1>Log-In</h1>
 
-<form action="home/" method="post" id="login-form">
-    <input type="hidden" name="csrfmiddlewaretoken" value="SLhD69oiOEHZyqwkeDvwHS5sNGJDtZiEZwRWhJIm5nE5iieqm6ohACGsPHnIMQ3e"> 
+<form action="home/" method="post" id="login-form">{% csrf_token %} 
+    <!--<input type="hidden" name="csrfmiddlewaretoken" value="SLhD69oiOEHZyqwkeDvwHS5sNGJDtZiEZwRWhJIm5nE5iieqm6ohACGsPHnIMQ3e"> -->
       
-    <label for="id_username" class="required">Username:</label> 
-    <input type="text" name="username" autofocus autocapitalize="none" autocomplete="username" maxlength="150" required id="id_username">
-     <br>
-    <label for="id_password" class="required">Password:</label> 
-    <input type="password" name="password" autocomplete="current-password" required id="id_password">
+    <label for="id_username">Username:</label> 
+    <input type="text" name="username" maxlength="250" required id="id_username">
+    <br>
+    <label for="id_password">Password:</label> 
+    <input type="password" name="password"  required id="id_password">
      
-    <div class="submit-row">
-      <input type="submit" value="Log in">
-    </div>
     
+    <input type="submit" value="Log in">
+    
+
   </form>
 
 {% endblock %}

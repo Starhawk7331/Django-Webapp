@@ -1,22 +1,22 @@
+from django.views.decorators.csrf import csrf_protect
 from django.http import HttpResponse
 from django.template import loader
 from .models import Family_members
 
+@csrf_protect
 def home(request):
-    template = loader.get_template("home.html")
-    return HttpResponse(template.render())
 
     if request.method == 'post':
 
-        username = request.post.get('username', None)
-        password = request.post.get('password', None)
+        Username = request.post.get('username', None)
+        Password = request.post.get('password', None)
 
-        if username in Family_members.objects.username():
-            user = Family_members.objects.filter(username).values()
+        user = Family_members.objects.get(username=Username)
+
+        if user.password == Password:
             
-            if user.password == password:
-                template = loader.get_template("home.html")
-                return HttpResponse(template.render())
+            template = loader.get_template("home.html")
+            return HttpResponse(template.render())
         else:
             template = loader.get_template("login.html")
             return HttpResponse(template.render()) 

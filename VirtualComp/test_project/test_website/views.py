@@ -6,23 +6,23 @@ def home(request):
     template = loader.get_template("home.html")
     return HttpResponse(template.render())
 
+    if request.method == 'post':
 
-    # if request.method == 'GET':
-    #     username = request.GET.get('username', None)
-    #     password = request.GET.get('password', None)
-        
-    #     if username in Family_members.objects.all() and password in Family_members.objects.all():
-    #         template = loader.get_template("home.html")
-    #         return HttpResponse(template.render())
-        
-    #     else:
-    #         return HttpResponse("debug1")
-    #         #template = loader.get_template("login.html")
-    #         #return HttpResponse(template.render()) 
-    # else:
-    #     return HttpResponse("debug2")
-    #     #template = loader.get_template("login.html")
-    #     #return HttpResponse(template.render())
+        username = request.post.get('username', None)
+        password = request.post.get('password', None)
+
+        if username in Family_members.objects.username():
+            user = Family_members.objects.filter(username).values()
+            
+            if user.password == password:
+                template = loader.get_template("home.html")
+                return HttpResponse(template.render())
+        else:
+            template = loader.get_template("login.html")
+            return HttpResponse(template.render()) 
+    else: 
+        template = loader.get_template("login.html")
+        return HttpResponse(template.render())
     
     
 

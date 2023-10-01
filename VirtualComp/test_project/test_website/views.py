@@ -25,7 +25,7 @@ def home(request):
         return HttpResponse(template.render())
     
     
-
+@csrf_protect
 def login(request):
     template = loader.get_template("login.html")
     return HttpResponse(template.render())

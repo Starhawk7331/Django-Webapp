@@ -1,16 +1,17 @@
-{% extends "global.html" %}
+<!DOCTYPE html>
+<html>
+<head>
 
-{% block title %}
-    Log-In
-{% endblock %}
+<title>Log-In</title>
+</head>
+<body>
 
-{% block content %}
-<!-- templates/registration/login.html -->
-<h2>Log In</h2>
-<form method="post">
-  {% csrf_token %}
-  {{ form.as_p }}
-  <button type="submit">Log In</button>
-</form>
+  <h2>Log In</h2>
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Log In</button>
+  </form>
 
-{% endblock %}
+</body>
+</html>

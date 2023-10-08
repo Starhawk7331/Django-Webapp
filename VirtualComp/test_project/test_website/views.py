@@ -12,8 +12,6 @@ def home(request):
         return HttpResponse(template.render())
     else:
         login(request)
-
-    
     
 
 def login(request):

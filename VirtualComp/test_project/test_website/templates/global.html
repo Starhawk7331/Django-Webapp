@@ -2,17 +2,27 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <link rel="stylesheet" href="{% static 'global.css' %}">
+  <link rel="stylesheet" href="{% static 'css/global.css' %}">
   <title>{% block title %}{% endblock %}</title>
 </head>
 <body>
-
+{% if user.is_authenticated %}
+<!-- Navigation -->
 <div class="topnav">
-  <a href="/">HOME</a>
+  <a href="/">Home</a>
+  <a href="cat-pics">Cat-Pics</a>
+  <a href="{% url 'logout' %}">Log Out</a>
 </div>
 
 {% block content %}
 {% endblock %}
 
+{% else %}
+  <p>You are not logged in</p>
+  <a href="{% url 'login' %}">Log In</a>
+{% endif %}
+
+
 </body>
+
 </html>

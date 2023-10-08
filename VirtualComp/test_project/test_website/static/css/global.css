@@ -1,6 +1,7 @@
 .topnav {
     background-color: #23262e;
     overflow: hidden;
+    font-weight: 550;
   }
   
   /* Style the links inside the navigation bar */
@@ -29,5 +30,5 @@ body{
     background-color: #2a475e;
     font-family: "Arial";
     color: white;
-    
+
 }

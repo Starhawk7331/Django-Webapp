@@ -8,6 +8,10 @@ Cat-pics
 
 {% load static %}
 
-
+{% for x in data %}
+    <a href="{{ x.photo.url }}">
+        <img src="{{ x.photo.url }}" alt="{{ x.title}}" style="width:100%">
+    </a>
+{% endfor %}
 
 {% endblock %}

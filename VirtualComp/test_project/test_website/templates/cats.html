@@ -13,13 +13,15 @@ Cat-pics
 {%block content %}
 
 {% for x in data %}
-<div>
-    <div><!--Image-->
+<div class="post-block"><!--Post block-->
+    
+    <div class="image-block"><!--Image-->
         <a href="{{ x.image.url }}">
             <img src="{{ x.image.url }}" alt="{{ x.title}}" style="width:50%">
         </a>
     </div>
-    <div><!--Textbox: Likes, comments-->
+
+    <div class="text-block "><!--Textbox: Likes, comments-->
 
     </div>
 </div>

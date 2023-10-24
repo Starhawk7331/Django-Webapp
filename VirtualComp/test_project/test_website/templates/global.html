@@ -3,6 +3,8 @@
 <html>
 <head>
   <link rel="stylesheet" href="{% static 'test_website/css/global.css' %}">
+  {% block stylesheets %}
+  {% endblock %}
   <title>{% block title %}{% endblock %}</title>
 </head>
 <body>
@@ -13,6 +15,8 @@
   <a href="cats">Cats</a>
   <a style="color:red;float: right;" href="{% url 'logout' %}">Log Out</a>
 </div>
+
+<br>
 
 {% block content %}
 {% endblock %}

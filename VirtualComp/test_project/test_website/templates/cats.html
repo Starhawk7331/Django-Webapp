@@ -1,17 +1,29 @@
 {% extends "global.html" %}
 
+{% load static%}
+
+{% block stylesheets%}
+<link rel="stylesheet" href="{% static 'test_website/css/post_display.css' %}">
+{% endblock %}
+
 {% block title %}
 Cat-pics
 {% endblock %}
 
 {%block content %}
 
-{% load static %}
-
 {% for x in data %}
-    <a href="{{ x.photo.url }}">
-        <img src="{{ x.photo.url }}" alt="{{ x.title}}" style="width:100%">
-    </a>
+<div>
+    <div><!--Image-->
+        <a href="{{ x.image.url }}">
+            <img src="{{ x.image.url }}" alt="{{ x.title}}" style="width:50%">
+        </a>
+    </div>
+    <div><!--Textbox: Likes, comments-->
+
+    </div>
+</div>
+    
 {% endfor %}
 
 {% endblock %}

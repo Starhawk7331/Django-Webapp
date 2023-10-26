@@ -3,7 +3,7 @@
 {% load static%}
 
 {% block stylesheets%}
-<link rel="stylesheet" href="{% static 'test_website/css/post_display.css' %}">
+    <link rel="stylesheet" href="{% static 'test_website/css/post_display.css' %}">
 {% endblock %}
 
 {% block title %}
@@ -16,14 +16,21 @@ Cat-pics
 <div class="post-block"><!--Post block-->
     
     <div class="image-block"><!--Image-->
-        <a href="{{ x.image.url }}">
-            <img src="{{ x.image.url }}" alt="{{ x.title}}" style="width:50%">
+
+        <a class="image-link" href="{{ x.image.url }}">
+
+            <img class="image" src="{{ x.image.url }}" alt="{{ x.title}}">
+        
         </a>
+
     </div>
 
     <div class="text-block "><!--Textbox: Likes, comments-->
+        
+        <h3>{{x.title}}</h3>
 
     </div>
+
 </div>
     
 {% endfor %}

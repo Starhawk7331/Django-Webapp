@@ -1,11 +1,34 @@
-.post-block{
+body{
 
 }
+
+.post-block{
+    margin: 15px;
+    padding: 20px;
+    background-color: #2a2c30;
+    border-radius: 20px;
+    display:flex;
+}
+
+/* image Block */
 
 .image-block{
+    flex: 3;
 
 }
 
-.text-block{
 
+
+.image-link{
+
+}
+
+.image{
+    width: 100%;
+}
+
+/* Text Block*/
+
+.text-block{
+    flex: 1;
 }

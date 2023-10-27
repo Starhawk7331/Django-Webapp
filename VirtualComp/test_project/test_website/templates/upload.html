@@ -1,0 +1,15 @@
+{% extends "global.html" %}
+
+{% block title %}
+  Home
+{% endblock %}
+
+{% block content %}
+
+<form action="uploaded" method="POST" enctype="multipart/form-data">  
+    {% csrf_token %}  
+    {{ form.as_p }}  
+    <button type="submit" >Save</button>  
+</form>  
+
+{% endblock %}

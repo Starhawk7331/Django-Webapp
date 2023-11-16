@@ -13,9 +13,6 @@ def cats(request):
     }
     return render(request,"cats.html", context)
 
-def upload(request):
-    return render(request,"upload.html")
-
 class FileFieldFormView(FormView):
     form_class = ImageFieldForm
     template_name = "upload.html"  # Replace with your template.

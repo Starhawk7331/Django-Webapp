@@ -1,5 +1,5 @@
 from django import forms
-
+from django.db import models
 
 class MultipleImageInput(forms.ClearableFileInput):
     allow_multiple_selected = True

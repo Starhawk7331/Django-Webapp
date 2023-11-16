@@ -22,3 +22,4 @@ class MultipleImageField(forms.ImageField):
 class ImageFieldForm(forms.Form):
     image_field = MultipleImageField()
 
+
